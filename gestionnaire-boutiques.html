@@ -610,9 +610,10 @@ var INTRO_SPLASH_BLOCK =
         '} else if (type === "rebond"){' +
           'activeEl.style.transform = "scale(0.3)";' +
           'activeEl.style.opacity = "0";' +
+          'var bounceMs = Math.max(500, Math.min(holdMs * 0.6, 3000));' +
           'requestAnimationFrame(function(){' +
             'requestAnimationFrame(function(){' +
-              'activeEl.style.animation = "introRebondIn .75s cubic-bezier(.25,.1,.25,1) forwards";' +
+              'activeEl.style.animation = "introRebondIn " + (bounceMs/1000) + "s cubic-bezier(.25,.1,.25,1) forwards";' +
             '});' +
           '});' +
         '} else {' +
